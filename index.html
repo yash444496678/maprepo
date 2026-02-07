@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Map Integration</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>My Google Map</h2>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      // Example coordinates (Phagwara, Punjab)
+      var location = { lat: 31.224, lng: 75.771 };
+      
+      // Create map
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: location
+      });
+
+      // Add marker
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Here we are!"
+      });
+    }
+  </script>
+
+  <!-- Load Google Maps API -->
+  <script async 
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
+</body>
+</html>
